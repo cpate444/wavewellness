@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wave Wellness — Become a member</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16120F}
+a{color:#F6EFE6}a:hover{color:#FFFFFF}
+.field{display:block;width:100%;box-sizing:border-box;height:52px;padding:0 16px;border:1px solid rgba(246,239,230,0.4);border-radius:8px;background:rgba(18,14,11,0.5);font:400 16px/1.3 Montserrat,system-ui,sans-serif;color:#F6EFE6}
+textarea.field{height:96px;padding:14px 16px;resize:vertical}
+.field:focus{outline:2px solid #F2E6D6;outline-offset:1px;border-color:#F2E6D6}
+.field-err{border-color:#F2A48F}
+.submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:58px;border:0;border-radius:999px;background:#F2E6D6;color:#2B231D;font:600 13px/1 Montserrat,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+.submit:hover{background:#FFFFFF}
+.textlink{background:none;border:0;padding:0;min-height:44px;color:#F6EFE6;font:500 14px Montserrat,system-ui,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #C9A15A;outline-offset:3px}
+</style>
+</helmet>
+<main style="position: relative; overflow: hidden; font-family: Montserrat, system-ui, sans-serif; color: #F6EFE6; background: #16120F">
+<div aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: clamp(620px, 50vw, 1100px)">
+<img src="./assets/7a465d7b24c28398676a1d8c60fb2849.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 26% 50%">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,14,11,0.5) 0%, rgba(18,14,11,0.58) 50%, rgba(22,18,15,0.9) 85%, #16120F 100%)"></div>
+</div>
+<div style="position: relative; max-width: 640px; margin: 0 auto; padding: clamp(28px, 6vw, 56px) 20px 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center">
+
+<img src="./assets/365a300acfbfb227b6dc7df17e9d3bd2.png" alt="Wave Wellness" style="height: clamp(42px, 8vw, 52px); width: auto; display: block">
+
+<p style="margin: clamp(40px, 9vw, 72px) 0 16px; font-size: 12px; font-weight: 500; letter-spacing: clamp(2.4px, 0.8vw, 3.8px); text-transform: uppercase; color: #E6D3B3">Wave Wellness · Wilmington, NC</p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(36px, 5.4vw, 60px); line-height: 1.08; letter-spacing: -0.01em; color: #F6EFE6">Everything you need to feel your best, <em>all in one place</em></h1>
+<div aria-hidden="true" style="width: 64px; height: 2px; background: #C9A15A; margin: 32px 0 0"></div>
+
+<div id="lead-form" style="width: 100%; box-sizing: border-box; margin-top: clamp(40px, 8vw, 64px); text-align: left; scroll-margin-top: 24px">
+<sc-if value="{{notSubmitted}}" hint-placeholder-val="{{ true }}">
+<h2 style="margin: 0; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(32px, 8vw, 40px); line-height: 1.05; color: #F6EFE6">Become a member.</h2>
+<p style="margin: 12px auto 0; max-width: 460px; text-align: center; font-size: 15px; line-height: 1.6; color: #E3D8CA">Share a few details and we’ll be in touch to help you get started.</p>
+<form onSubmit="{{submit}}" noValidate="{{ true }}" style="display: flex; flex-direction: column; gap: 18px; margin-top: 32px">
+<div>
+<label for="lf-name" style="display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E3D8CA">Full name</label>
+<input id="lf-name" class="{{nameCls}}" type="text" autocomplete="name" value="{{name}}" onChange="{{onName}}" aria-invalid="{{nameInvalid}}">
+<sc-if value="{{errName}}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font-size: 13px; color: #F2A48F">{{errName}}</p></sc-if>
+</div>
+<div>
+<label for="lf-email" style="display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E3D8CA">Email</label>
+<input id="lf-email" class="{{emailCls}}" type="email" autocomplete="email" inputMode="email" value="{{email}}" onChange="{{onEmail}}" aria-invalid="{{emailInvalid}}">
+<sc-if value="{{errEmail}}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font-size: 13px; color: #F2A48F">{{errEmail}}</p></sc-if>
+</div>
+<div>
+<label for="lf-phone" style="display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E3D8CA">Phone</label>
+<input id="lf-phone" class="{{phoneCls}}" type="tel" autocomplete="tel" inputMode="tel" value="{{phone}}" onChange="{{onPhone}}" aria-invalid="{{phoneInvalid}}">
+<sc-if value="{{errPhone}}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font-size: 13px; color: #F2A48F">{{errPhone}}</p></sc-if>
+</div>
+<div>
+<label for="lf-goals" style="display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E3D8CA">Your goals</label>
+<textarea id="lf-goals" class="field" value="{{goals}}" onChange="{{onGoals}}"></textarea>
+</div>
+<div>
+<label for="lf-notes" style="display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E3D8CA">Any questions?</label>
+<textarea id="lf-notes" class="field" value="{{notes}}" onChange="{{onNotes}}"></textarea>
+</div>
+<button type="submit" class="submit" style="margin-top: 8px">Become a member <svg aria-hidden="true" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h20M15 1l5 5-5 5"></path></svg></button>
+<p style="margin: 0; text-align: center; font-size: 13px; color: #E3D8CA">We read every message personally. No spam, ever.</p>
+</form>
+</sc-if>
+<sc-if value="{{submitted}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 24px 0">
+<div aria-hidden="true" style="width: 56px; height: 56px; border-radius: 999px; background: #F2E6D6; display: flex; align-items: center; justify-content: center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2B231D" stroke-width="1.8"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(32px, 8vw, 40px); line-height: 1.05; color: #F6EFE6">Thanks — you’re all set.</h2>
+<p style="margin: 0; max-width: 460px; font-size: 16px; line-height: 1.65; color: #E3D8CA">Thank you, {{firstName}}. We’ll be in touch shortly to help you get started.</p>
+<button type="button" class="textlink" onClick="{{reset}}">Submit another request</button>
+</div>
+</sc-if>
+</div>
+
+<footer style="width: 100%; margin-top: clamp(56px, 10vw, 88px); padding: 28px 0 36px; border-top: 1px solid rgba(246,239,230,0.25); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 24px; font-size: 13px; color: #E3D8CA">
+<a href="https://maps.google.com/?q=805+Pine+Grove+Dr,+Wilmington,+NC+28403" style="color: #F6EFE6; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">805 Pine Grove Dr, Wilmington, NC 28403</a>
+<a href="tel:+19102509283" style="color: #F6EFE6; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Text or call (910) 250-9283</a>
+<a href="mailto:membership@wavewellnessilm.com" style="color: #F6EFE6; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">membership@wavewellnessilm.com</a>
+<a href="[PRIVACY POLICY LINK]" style="color: #E3D8CA; min-height: 44px; display: inline-flex; align-items: center">Privacy policy</a>
+</footer>
+
+</div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { name: '', email: '', phone: '', goals: '', notes: '', errors: {}, submitted: false };
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var err = s.errors || {};
+    function field(key) {
+      return function (e) {
+        var patch = {};
+        patch[key] = e.target.value;
+        var nextErr = Object.assign({}, self.state.errors);
+        delete nextErr[key];
+        patch.errors = nextErr;
+        self.setState(patch);
+      };
+    }
+    var submit = function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      var st = self.state;
+      var errors = {};
+      if (!st.name.trim()) errors.name = 'Please add your name.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(st.email.trim())) errors.email = 'Please enter a valid email address.';
+      if (st.phone.replace(/\D/g, '').length < 10) errors.phone = 'Please enter a 10-digit phone number.';
+      if (Object.keys(errors).length) { self.setState({ errors: errors }); return; }
+      self.setState({ submitted: true, errors: {} });
+    };
+    return {
+      name: s.name, email: s.email, phone: s.phone, goals: s.goals, notes: s.notes,
+      onName: field('name'), onEmail: field('email'), onPhone: field('phone'), onGoals: field('goals'), onNotes: field('notes'),
+      errName: err.name || '', errEmail: err.email || '', errPhone: err.phone || '',
+      nameCls: err.name ? 'field field-err' : 'field',
+      emailCls: err.email ? 'field field-err' : 'field',
+      phoneCls: err.phone ? 'field field-err' : 'field',
+      nameInvalid: err.name ? 'true' : 'false',
+      emailInvalid: err.email ? 'true' : 'false',
+      phoneInvalid: err.phone ? 'true' : 'false',
+      submit: submit,
+      submitted: s.submitted,
+      notSubmitted: !s.submitted,
+      firstName: s.name.trim().split(/\s+/)[0] || 'friend',
+      reset: function () { self.setState({ name: '', email: '', phone: '', goals: '', notes: '', errors: {}, submitted: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
