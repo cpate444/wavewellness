@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wave Wellness — Become a Member</title>
+<title>Wave Wellness — Inquire Today</title>
 <meta name="description" content="Everything you need to feel your best, all in one place. Wave Wellness, Wilmington, NC.">
 <meta property="og:title" content="Wave Wellness — Become a Member">
 <meta property="og:description" content="Everything you need to feel your best, all in one place.">
@@ -41,6 +41,10 @@
   .submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:58px;margin-top:8px;border:0;border-radius:999px;background:#F2E6D6;color:#2B231D;font:600 13px/1 Montserrat,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
   .submit:hover{background:#fff}
   .submit[disabled]{opacity:.6;cursor:wait}
+  .join{width:100%;margin-top:32px;padding-top:32px;border-top:1px solid rgba(246,239,230,.2);display:flex;flex-direction:column;align-items:center;gap:16px}
+  .join p{margin:0;font-size:14px;color:#E3D8CA}
+  .pill-outline{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:58px;border:1px solid rgba(246,239,230,.7);border-radius:999px;color:#F6EFE6;text-decoration:none;font:600 13px/1 Montserrat,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+  .pill-outline:hover{background:#F2E6D6;color:#2B231D;border-color:#F2E6D6}
   .note{margin:0;text-align:center;font-size:13px;color:#E3D8CA}
   .thanks{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 0}
   .check{width:56px;height:56px;border-radius:999px;background:#F2E6D6;display:flex;align-items:center;justify-content:center}
@@ -66,7 +70,7 @@
 
     <section id="lead-form">
       <div id="form-view">
-        <h2>Become a member.</h2>
+        <h2>Inquire today.</h2>
         <p class="sub">Share a few details and we’ll be in touch to help you get started.</p>
         <form id="lead" novalidate>
           <div>
@@ -92,7 +96,7 @@
             <label for="lf-notes">Any questions?</label>
             <textarea id="lf-notes" name="questions" class="field"></textarea>
           </div>
-          <button type="submit" class="submit">Become a member
+          <button type="submit" class="submit">Inquire today
             <svg aria-hidden="true" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
           </button>
           <p id="err-submit" class="err" style="text-align:center"></p>
@@ -109,6 +113,13 @@
         <button type="button" class="textlink" id="again">Submit another request</button>
       </div>
     </section>
+
+    <div class="join">
+      <p>Ready to join now?</p>
+      <a class="pill-outline" href="https://www.wavewellnessilm.com/store">Become a member
+        <svg aria-hidden="true" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+      </a>
+    </div>
 
     <footer>
       <a href="https://maps.google.com/?q=805+Pine+Grove+Dr,+Wilmington,+NC+28403">805 Pine Grove Dr, Wilmington, NC 28403</a>
